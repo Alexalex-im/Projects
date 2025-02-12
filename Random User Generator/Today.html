@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #user{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Random user</h1>
+        <button onclick="fetchData()">Click here</button>
+    </div>
+    <div id="user">
+
+    </div>
+    <script>
+        async function fetchData() {
+            let contain = document.getElementById("user");
+           try{
+           
+            const response = await fetch('https://randomuser.');
+            let data = await response.json();
+            let user = data.results[0];
+
+            let username = `${user.name.title}. ${user.name.first} ${user.name.last}`;
+            let gender = user.gender;
+            let picture = user.picture.large;
+            contain.innerHTML=`<h3> ${username}</h3> <p>${gender}</p> <img src="${picture}">`;
+
+
+           }
+          
+           catch(err){
+ contain.innerHTML=`<h3>No user data </h3>`;
+
+        }
+
+
+
+            
+        }
+    </script>
+</body>
+</html>
