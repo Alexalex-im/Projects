@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Example</title>
+    <style>
+        /* Static Example */
+        .static-box {
+            position: static;
+            background-color: lightblue;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Relative Example */
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: lightcoral;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Absolute Example (inside a relative container) */
+        .relative-container {
+            position: relative;
+            background-color: lightgreen;
+            padding: 20px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: lightyellow;
+            padding: 20px;
+        }
+
+        /* Fixed Example */
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: lightsalmon;
+            padding: 20px;
+            z-index: 100; /* Ensures it's on top */
+        }
+
+        /* Sticky Example */
+        .sticky-box {
+            /* position: -webkit-sticky;  */
+            position: sticky;
+            top: 0;
+            background-color: lightgrey;
+            padding: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 100px; /* Space for fixed box */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Static Example -->
+    <div class="static-box">
+        <h2>Static Position</h2>
+        <p>This element is positioned normally in the document flow.</p>
+    </div>
+
+    <!-- Relative Example -->
+    <div class="relative-box">
+        <h2>Relative Position</h2>
+        <p>This element is moved 20px down and 20px right from its normal position.</p>
+    </div>
+
+    <!-- Absolute Example inside a relative container -->
+    <div class="relative-container">
+        <h2>Relative Container</h2>
+        <div class="absolute-box">
+            <h2>Absolute Position</h2>
+            <p>This element is positioned 20px from the top right of its parent.</p>
+        </div>
+    </div>
+
+    <!-- Sticky Example -->
+    <div class="sticky-box">
+        <h2>Sticky Position</h2>
+        <p>This element will stick to the top when you scroll past it.</p>
+    </div>
+
+    <!-- Long content for scrolling -->
+    <div style="height: 1000px; background-color: lightgray;">
+        <p>Scroll down to see the sticky and fixed positioning in action.</p>
+    </div>
+
+    <!-- Fixed Example -->
+    <div class="fixed-box">
+        <h2>Fixed Position</h2>
+        <p>This element stays fixed at the bottom-right of the screen.</p>
+    </div>
+
+</body>
+</html>
